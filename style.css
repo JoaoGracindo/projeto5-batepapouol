@@ -77,15 +77,15 @@ input{
     height: 50%;
     color: #000000;
     font-size: 18px;
-    border-color: rgba(0,0,255,0);
-
-}
-
-input[type=text]{
-    color: #000000;
-    font-size: 18px;
+    border: 0;
     font-style: italic;
+    outline:0;
+
 }
+input:focus {
+    outline:none!important;
+}
+    
 
 .fundo {
     background-color: #E5E5E5;
