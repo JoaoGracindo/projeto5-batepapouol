@@ -23,7 +23,8 @@
     border-radius: 2px;
     width: 100vw;
     margin: 2px 0;
-    height: 40px;
+    min-height: 40px;
+    overflow-wrap: break-word;
 }
 
 .mensagem :nth-child(1){
@@ -33,6 +34,9 @@
 .mensagem :nth-child(2){
     margin-right: 20px;
     font-weight: 700;
+}
+.mensagem :nth-child(3){
+    
 }
 
 ion-icon{

@@ -71,16 +71,15 @@ function cadastraUsuario(){
             name: usuario
           };
 
-    console.log(nome)
     
     const promise = axios.post(urlParticipantes, nome);
-    promise.then(console.log("deu td certo"));
+    promise.then(() => console.log("deu td certo"));
     promise.catch(erro400)
 }
 
 function verificaAtividade(){
     const promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status',nome)
-    promise.then(console.log('ta on'))
+    promise.then(() => console.log('ta on'))
 }
 
 function enviaMensagens(){
