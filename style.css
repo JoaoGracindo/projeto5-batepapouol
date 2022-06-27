@@ -1,13 +1,16 @@
 *{
-    box-sizing: border-box;
+
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #000000;
 }
 
 .caixaTexto {
+    position: fixed;
+    bottom: 12%;
     top: 12%;
-    z-index: 1;
+    overflow-y: scroll;
+    
 }
 
 .mensagem {
@@ -32,13 +35,19 @@
     font-weight: 700;
 }
 
+ion-icon{
+    position: fixed;
+    right: 5%;
+    
+}
+
 .topo{
     position: fixed;
     left: 0;
-    top: 0;
+    top: 0; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
     background-color: #FFFFFF;
-    width: 100%;
+    width: 100vw;
     height: 12%;
     display: flex;
     padding-left: 7%;
@@ -53,7 +62,7 @@
     bottom: 0;
     box-shadow: 0px -4px 6px 0px #0000000D;
     background-color: #FFFFFF;
-    width: 100%;
+    width: 100vw;
     height: 12%;
     display: flex;
     align-items: center;
@@ -64,12 +73,18 @@
 }
 
 input{
-    width: 80%;
+    width: 75%;
     height: 50%;
     color: #000000;
     font-size: 18px;
     border-color: rgba(0,0,255,0);
 
+}
+
+input[type=text]{
+    color: #000000;
+    font-size: 18px;
+    font-style: italic;
 }
 
 .fundo {
@@ -86,4 +101,8 @@ input{
 
 .private_message{
     background-color: #FFDEDE;
+}
+
+w{
+    font-weight: 400;
 }

@@ -26,14 +26,32 @@ function renderizaMensagens(mensagens){
     caixaTexto.innerHTML = '';
     
     for (let i = 0; i < mensagens.length; i++){
-        caixaTexto.innerHTML += 
-            `<li class ="mensagem ${mensagens[i].type}">
-                <span>(${mensagens[i].time})</span>
-                <span>${mensagens[i].from}:</span>
-                <span>${mensagens[i].text}</span>
-            </li>
-            `
+        if (mensagens[i].to === 'Todos' || mensagens[i].to === usuario){
+            if(mensagens[i].type === 'status'){
+                caixaTexto.innerHTML += 
+                `<li class ="mensagem ${mensagens[i].type}">
+                    <span style="color: #AAAAAA">(${mensagens[i].time})</span>
+                    <span>${mensagens[i].from}</span>
+                    <span>${mensagens[i].text}</span>
+                </li>
+                `
+            } else{
+                caixaTexto.innerHTML += 
+                `<li class ="mensagem ${mensagens[i].type}">
+                    <span style="color: #AAAAAA">(${mensagens[i].time})</span>
+                    <span>${mensagens[i].from}<w>para</w>${mensagens[i].to}:</span>
+                    <span>${mensagens[i].text}</span>
+                </li>
+                `   
+            }
+        }
+
+
+
     }
+
+    caixaTexto.lastElementChild.scrollIntoView();
+
 }
 
 function getUsers (){
@@ -77,13 +95,19 @@ function enviaMensagens(){
 
     const promise = axios.post(urlMensagens,objeto)
     promise.then(mensagemEnviadaComSucesso);
-    promise.catch(alert('não fooooi'));
+    promise.catch(() => {
+        usuario = prompt('Não foi possivel enviar sua mensagem. Tente logar de novo.');
+        cadastraUsuario();
+        }
+    );
 
 }
 
+
+
 function mensagemEnviadaComSucesso (){
     document.querySelector('input').value = '';
-    alert('fooooi');
+    getMessanges();
 }
 
 cadastraUsuario();
